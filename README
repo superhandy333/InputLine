@@ -1,1 +1,3 @@
 InputLine ist eine Komponente, die eine Eingabezeile mit einem Label enthält.
+Mit InputLine können unter System.Windows.Forms leicht Formularfenster mit mehreren Eingabetextboxen erstellt werden.
+

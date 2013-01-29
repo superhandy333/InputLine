@@ -1,13 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿/* Tools      Kleine Helferlein vom Superhandy
+ * -------------------------------------------
+ * Anwendung: Testanwendung
+ * Datei:     inputline.cs
+ * Version:   29.01.2013
+ * Besitzer:  Mathias Rentsch (rentsch@online.de)
+ * Lizenz:    GPL
+ *
+ * Die Anwendung und die Quelltextdateien sind freie Software und stehen unter der
+ * GNU General Public License. Der Originaltext dieser Lizenz kann eingesehen werden
+ * unter http://www.gnu.org/licenses/gpl.html.
+ */
+
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace XRail.Tools
+namespace Superhandy.Tools
 {
     public class InputLine : UserControl
     {
@@ -23,7 +30,7 @@ namespace XRail.Tools
             label.AutoSize = false;
             label.TabStop = false;
             label.Font = new Font("Verdana", 9, FontStyle.Regular);
-            label.Location = new Point(10,3);
+            label.Location = new Point(10, 3);
             label.Size = new Size(180, 17);
             label.Text = "<labeltext>";
             Controls.Add(label);
@@ -33,7 +40,7 @@ namespace XRail.Tools
             panel1.Location = new Point(10, 20);
             panel1.Size = new Size(180, 1);
             panel1.TabStop = false;
-            Controls.Add(panel1); 
+            Controls.Add(panel1);
 
             TextBox = new TextBox();
             TextBox.AutoSize = true;
@@ -51,7 +58,7 @@ namespace XRail.Tools
             TextBox.AutoSize = false;
             panel2.TabStop = false;
             panel2.Controls.Add(TextBox);
-            Controls.Add(panel2); 
+            Controls.Add(panel2);
 
             Height = panel2.Height;
         }
@@ -100,7 +107,7 @@ namespace XRail.Tools
             {
                 TextBox.Width = value;
                 panel2.Width = value + 2 * TextBoxPadding;
-                Width = panel2.Location.X + TextBox.Width + 2 * TextBoxPadding; 
+                Width = panel2.Location.X + TextBox.Width + 2 * TextBoxPadding;
             }
             get
             {
@@ -108,4 +115,5 @@ namespace XRail.Tools
             }
         }
     }
+}
 
