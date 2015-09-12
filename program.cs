@@ -17,15 +17,25 @@ using Superhandy.Tools;
 
 public class TestForm : Form
 {
-    private InputLine inputLine1;
+    /*private InputLine inputLine1;
     private InputLine inputLine2;
     private InputLine inputLine3;
     private InputLine inputLine4;
     private InputLine inputLine5;
+     */ 
 
     public TestForm()
     {
-        inputLine1 = new InputLine();
+        BottomBar buttonBar = new BottomBar();
+        buttonBar.Button1Text = "Abbrechen";
+        buttonBar.Button2Text = "OK";
+        buttonBar.Button3Visible = false;
+        buttonBar.Button4Visible = false;
+        buttonBar.Button1Click += new EventHandler(buttonBar_Button1Click);
+        buttonBar.Button2Click += new EventHandler(buttonBar_Button2Click);
+        Controls.Add(buttonBar);
+
+       /* inputLine1 = new InputLine();
         inputLine2 = new InputLine();
         inputLine3 = new InputLine();
         inputLine4 = new InputLine();
@@ -56,14 +66,27 @@ public class TestForm : Form
         Controls.Add(inputLine3);
         Controls.Add(inputLine4);
         Controls.Add(inputLine5);
+         */
 
+        
         Height = 250;
         Width = 550;
+    }
+
+    void buttonBar_Button2Click(object sender, EventArgs e)
+    {
+        MessageBox.Show("OK");
+    }
+
+    void buttonBar_Button1Click(object sender, EventArgs e)
+    {
+        MessageBox.Show("Abbrechen");
     }
     
     [STAThread]
     static void Main()
     {
+        Application.EnableVisualStyles();
         Application.Run(new TestForm());
     }
 }

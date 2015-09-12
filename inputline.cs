@@ -2,7 +2,7 @@
  * -------------------------------------------
  * Anwendung: Testanwendung
  * Datei:     inputline.cs
- * Version:   29.01.2013
+ * Version:   11.09.2015
  * Besitzer:  Mathias Rentsch (rentsch@online.de)
  * Lizenz:    GPL
  *
@@ -114,6 +114,17 @@ namespace Superhandy.Tools
                 return TextBox.Width;
             }
         }
+
+        public bool ReadOnly
+        {
+            set
+            {
+                TextBox.ReadOnly = value;
+            }
+            get
+            {
+                return TextBox.ReadOnly;
+            }
+        }
     }
 }
-
