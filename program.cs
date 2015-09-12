@@ -2,7 +2,7 @@
  * -------------------------------------------
  * Anwendung: Testanwendung
  * Datei:     program.cs
- * Version:   29.01.2013
+ * Version:   12.09.2015
  * Besitzer:  Mathias Rentsch (rentsch@online.de)
  * Lizenz:    GPL
  *
@@ -15,79 +15,82 @@ using System;
 using System.Windows.Forms;
 using Superhandy.Tools;
 
-public class TestForm : Form
+namespace InputLineTest
 {
-    /*private InputLine inputLine1;
-    private InputLine inputLine2;
-    private InputLine inputLine3;
-    private InputLine inputLine4;
-    private InputLine inputLine5;
-     */ 
-
-    public TestForm()
+    public class TestForm : Form
     {
-        BottomBar buttonBar = new BottomBar();
-        buttonBar.Button1Text = "Abbrechen";
-        buttonBar.Button2Text = "OK";
-        buttonBar.Button3Visible = false;
-        buttonBar.Button4Visible = false;
-        buttonBar.Button1Click += new EventHandler(buttonBar_Button1Click);
-        buttonBar.Button2Click += new EventHandler(buttonBar_Button2Click);
-        Controls.Add(buttonBar);
+        private InputLine inputLine1;
+        private InputLine inputLine2;
+        private InputLine inputLine3;
+        private InputLine inputLine4;
+        private InputLine inputLine5;
 
-       /* inputLine1 = new InputLine();
-        inputLine2 = new InputLine();
-        inputLine3 = new InputLine();
-        inputLine4 = new InputLine();
-        inputLine5 = new InputLine();
-    
-        inputLine1.Line = 1;
-        inputLine1.LabelText = "Vorname";
-        inputLine1.TextBoxSize = 200;
+        public TestForm()
+        {
+            inputLine1 = new InputLine();
+            inputLine2 = new InputLine();
+            inputLine3 = new InputLine();
+            inputLine4 = new InputLine();
+            inputLine5 = new InputLine();
 
-        inputLine2.Line = 2;
-        inputLine2.LabelText = "Nachname";
-        inputLine2.TextBoxSize = 200;
+            inputLine1.Line = 1;
+            inputLine1.LabelText = "Vorname";
+            inputLine1.TextBoxSize = 200;
 
-        inputLine3.Line = 3;
-        inputLine3.LabelText = "Strasse";
-        inputLine3.TextBoxSize = 300;
+            inputLine2.Line = 2;
+            inputLine2.LabelText = "Nachname";
+            inputLine2.TextBoxSize = 200;
 
-        inputLine4.Line = 4;
-        inputLine4.LabelText = "PLZ";
-        inputLine4.TextBoxSize = 100;
+            inputLine3.Line = 3;
+            inputLine3.LabelText = "Strasse";
+            inputLine3.TextBoxSize = 300;
 
-        inputLine5.Line = 5;
-        inputLine5.LabelText = "Ort";
-        inputLine5.TextBoxSize = 300;
+            inputLine4.Line = 4;
+            inputLine4.LabelText = "PLZ";
+            inputLine4.TextBoxSize = 100;
 
-        Controls.Add(inputLine1);
-        Controls.Add(inputLine2);
-        Controls.Add(inputLine3);
-        Controls.Add(inputLine4);
-        Controls.Add(inputLine5);
-         */
+            inputLine5.Line = 5;
+            inputLine5.LabelText = "Ort";
+            inputLine5.TextBoxSize = 300;
 
-        
-        Height = 250;
-        Width = 550;
-    }
+            Controls.Add(inputLine1);
+            Controls.Add(inputLine2);
+            Controls.Add(inputLine3);
+            Controls.Add(inputLine4);
+            Controls.Add(inputLine5);
 
-    void buttonBar_Button2Click(object sender, EventArgs e)
-    {
-        MessageBox.Show("OK");
-    }
+            BottomBar buttonBar = new BottomBar();
+            buttonBar.ButtonBarButtons = BottomBarButtons.OKCancel;
 
-    void buttonBar_Button1Click(object sender, EventArgs e)
-    {
-        MessageBox.Show("Abbrechen");
-    }
-    
-    [STAThread]
-    static void Main()
-    {
-        Application.EnableVisualStyles();
-        Application.Run(new TestForm());
+            // buttonBar.ButtonBarButtons = BottomBarButtons.UserDefined;
+            // buttonBar.Button1Text = "Senden";    buttonBar.Button1Visible = true;
+            // buttonBar.Button2Text = "Vergleich"; buttonBar.Button2Visible = true;
+            // buttonBar.Button3Text = "Import";    buttonBar.Button3Visible = true;
+
+            buttonBar.Button1Click += new EventHandler(buttonBar_Button1Click);
+            buttonBar.Button2Click += new EventHandler(buttonBar_Button2Click);
+            Controls.Add(buttonBar); 
+
+            Height = 270;
+            Width = 550;
+        }
+
+        void buttonBar_Button2Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("OK");
+        }
+
+        void buttonBar_Button1Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Abbrechen");
+        }
+
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.Run(new TestForm());
+        }
     }
 }
 

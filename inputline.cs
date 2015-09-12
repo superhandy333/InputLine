@@ -2,7 +2,7 @@
  * -------------------------------------------
  * Anwendung: Testanwendung
  * Datei:     inputline.cs
- * Version:   11.09.2015
+ * Version:   12.09.2015
  * Besitzer:  Mathias Rentsch (rentsch@online.de)
  * Lizenz:    GPL
  *
